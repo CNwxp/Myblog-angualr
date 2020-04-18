@@ -1,0 +1,33 @@
+
+<div>
+  <nz-input-group [nzSuffix]="suffixTemplate">
+    <input style="width: 70%;" type="text" nz-input [(ngModel)]="inputtitle" placeholder="请输入标题"/>
+  </nz-input-group>
+  <br />
+  <br />
+  <nz-input-group [nzSuffix]="suffixIconSearch">
+    <input  style="width: 60%;" type="text" nz-input [(ngModel)]="inputtags" placeholder="请选择标签"/>
+    <button nz-button nzType="primary" (click)="submit()" [nzLoading]="isLoadingOne">发表</button>
+  </nz-input-group>
+
+</div>
+  <br />
+  <br />
+<div id="md" appEditorMd [editormdConfig]="conf" (onEditorChange)="syncModel($event)">
+  <textarea style="display: block;" [(ngModel)]="markdown"></textarea>
+</div>
+
+<ng-template #suffixTemplate>
+  <i nz-icon nz-tooltip
+      class="ant-input-clear-icon"
+      nzTheme="fill"
+      nzType="close-circle"
+      *ngIf="inputtitle"
+      (click)="inputtitle = null">
+    </i>
+    </ng-template>
+
+    <ng-template #suffixIconSearch>
+      <i nz-icon nzType="search"></i>
+    </ng-template>
+<hr>

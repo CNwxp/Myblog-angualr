@@ -1,0 +1,19 @@
+<nz-layout>
+  <nz-header>
+    <div class="logo"></div>
+    <ul nz-menu nzTheme="dark" nzMode="horizontal">
+      <li nz-menu-item> <a [routerLink]="['article']"> </a>写文章</li>
+      <li nz-menu-item><a [routerLink]="['homepage']" > </a>主页</li>
+      <li nz-menu-item>关于我</li>
+      <li nz-menu-item> 
+     联系我
+      </li>
+    </ul>
+  </nz-header>
+  <nz-content>
+    <div class="inner-content"> 
+      <router-outlet></router-outlet>
+    </div>
+  </nz-content>
+  <nz-footer>Ant Design ©2020 Implement By Angular</nz-footer>
+</nz-layout>
